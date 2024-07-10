@@ -17,19 +17,23 @@ const AddTodo = ({addItem}) => {
         setItemDate(date);
       }
 
-      const addTodoItem = (name,date)=>{
-        addItem(name,date);
+      
+
+      const handleForm = (event,itemName,itemDate)=>{
+        event.preventDefault();
+        addItem(itemName,itemDate);
         setItemName("");
         setItemDate("");
       }
-
      
 
   return (
     <div className={style.container}>
-      <input className={style.additem} value={itemName} type="text" onChange={itemNameOnChange} />
-      <input className={style.additem} value={itemDate}  type="date" onChange={itemDateOnChange} />
-      <button className={style.addbtn} onClick={()=> addTodoItem(itemName,itemDate)}>ADD</button>
+      <form onSubmit={(event)=>handleForm(event,itemName,itemDate)}>
+      <input className={style.additem} value={itemName} type="text" onChange={itemNameOnChange} required />
+      <input className={style.additem} value={itemDate}  type="date" onChange={itemDateOnChange} required />
+      <button className={style.addbtn} type="submit">ADD</button>
+      </form>
     </div>
   );
 };
