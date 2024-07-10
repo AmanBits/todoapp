@@ -38,7 +38,7 @@ const AddTodo = ({addItem}) => {
 =======
       <input className={style.additem} value={itemName} type="text" onChange={itemNameOnChange} required />
       <input className={style.additem} value={itemDate}  type="date" onChange={itemDateOnChange} required />
-      <button className={style.addbtn} onClick={()=> addTodoItem(itemName,itemDate)}>ADD</button>
+      <button className={style.addbtn}>ADD</button>
 >>>>>>> origin/main
     </div>
   );
