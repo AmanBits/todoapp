@@ -1,0 +1,17 @@
+.item{
+    list-style-type: none;
+    margin: auto;
+    width: 70%;
+    
+}
+
+.item_name,.item_date{
+    margin: 10px;
+}
+
+.delete_btn{
+    background-color: red;
+    padding: 8px;
+    color: white;
+    border-radius: 6px;
+}

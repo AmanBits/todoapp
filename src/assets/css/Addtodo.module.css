@@ -1,0 +1,20 @@
+.container{
+    width: 70%;
+    margin:auto;
+}
+
+.additem,.addbtn{
+    padding: 6px;
+    margin:5px ;
+}
+
+.addbtn{
+    background-color:green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
