@@ -16,7 +16,7 @@ function App() {
   };
 
   const deleteitem = (deleteitemname) => {
-   let newItems = itemList.filter(item=> item.name==deleteitem);
+   let newItems = itemList.filter(item=> item.name!==deleteitemname);
    setItem(newItems);
   };
 
