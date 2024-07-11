@@ -6,7 +6,10 @@ const AddTodo = ({ addItem }) => {
 
   const handleForm = (event) => {
     event.preventDefault();
+   
     addItem(useItemName.current.value, useItemDate.current.value);
+    useItemName.current.value="";
+    useItemDate.current.value="";
   };
 
   return (
@@ -28,14 +31,6 @@ const AddTodo = ({ addItem }) => {
           ADD
         </button>
       </form>
-<<<<<<< HEAD
-=======
-=======
-      <input className={style.additem} value={itemName} type="text" onChange={itemNameOnChange} required />
-      <input className={style.additem} value={itemDate}  type="date" onChange={itemDateOnChange} required />
-      <button className={style.addbtn}>ADD</button>
->>>>>>> origin/main
->>>>>>> origin/main
     </div>
   );
 };

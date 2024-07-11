@@ -11,8 +11,9 @@ function App() {
   const [itemList, setItem] = useState([]);
   
   const addItem = (name, date) => {
-    let item = [...itemList, { name: name, date: date }];
-    setItem(item);
+    setItem((currentValue)=>{
+      return [...currentValue,{ name: name, date: date }]
+    });
   };
 
   const deleteitem = (deleteitemname) => {
