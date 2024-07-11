@@ -5,11 +5,11 @@ import ItemList from "./components/ItemList";
 import Emptyerror from "./components/Emptyerror";
 
 import "./App.css";
-import { useState } from "react";
+import {  useState } from "react";
 
 function App() {
   const [itemList, setItem] = useState([]);
-
+  
   const addItem = (name, date) => {
     let item = [...itemList, { name: name, date: date }];
     setItem(item);

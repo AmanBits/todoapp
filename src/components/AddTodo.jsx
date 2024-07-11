@@ -1,45 +1,33 @@
-import { useState } from 'react';
-import style from '../assets/css/Addtodo.module.css';
-const AddTodo = ({addItem}) => {
+import { useRef } from "react";
+import style from "../assets/css/Addtodo.module.css";
+const AddTodo = ({ addItem }) => {
+  const useItemName = useRef();
+  const useItemDate = useRef();
 
-    const [itemName,setItemName] = useState("");
-    const [itemDate,setItemDate] = useState("");
-
-
-
-    const itemNameOnChange = (event)=>{
-      let name = event.target.value;
-      setItemName(name);
-    }
-
-    const itemDateOnChange = (event)=>{
-        let date = event.target.value;
-        setItemDate(date);
-      }
-
-      
-
-      const handleForm = (event,itemName,itemDate)=>{
-        event.preventDefault();
-        addItem(itemName,itemDate);
-        setItemName("");
-        setItemDate("");
-      }
-     
+  const handleForm = (event) => {
+    event.preventDefault();
+    addItem(useItemName.current.value, useItemDate.current.value);
+  };
 
   return (
     <div className={style.container}>
-<<<<<<< HEAD
-      <form onSubmit={(event)=>handleForm(event,itemName,itemDate)}>
-      <input className={style.additem} value={itemName} type="text" onChange={itemNameOnChange} required />
-      <input className={style.additem} value={itemDate}  type="date" onChange={itemDateOnChange} required />
-      <button className={style.addbtn} type="submit">ADD</button>
+      <form onSubmit={handleForm}>
+        <input
+          className={style.additem}
+          ref={useItemName}
+          type="text"
+          required
+        />
+        <input
+          className={style.additem}
+          ref={useItemDate}
+          type="date"
+          required
+        />
+        <button className={style.addbtn} type="submit">
+          ADD
+        </button>
       </form>
-=======
-      <input className={style.additem} value={itemName} type="text" onChange={itemNameOnChange} required />
-      <input className={style.additem} value={itemDate}  type="date" onChange={itemDateOnChange} required />
-      <button className={style.addbtn} onClick={()=> addTodoItem(itemName,itemDate)}>ADD</button>
->>>>>>> origin/main
     </div>
   );
 };
