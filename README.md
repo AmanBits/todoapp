@@ -1,2 +1,2 @@
 # todoapp
-React.js based Todo App
+React.js based Todo App.
